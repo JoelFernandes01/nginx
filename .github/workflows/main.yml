@@ -4,15 +4,15 @@ on:
     branches: ["main"]
 jobs:
   CI:
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v4.2.2
-  - name: Construção da imagem Docker
-  - uses: docker/build-push-action@v6.10.0
-  with:
-    context: ./nginx
-    file: ./nginx/DockerfileNGINX
-    push: true
-    tags:
-      joelfernandes01/nginx:v1.0.0
-      joelfernandes01/latest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Construção da imagem Docker
+      - uses: docker/build-push-action@v6.10.0
+        with:
+          context: ./nginx
+          file: ./nginx/DockerfileNGINX
+          push: true
+          tags:
+            joelfernandes01/nginx:v1.0.0
+            joelfernandes01/latest
